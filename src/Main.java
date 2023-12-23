@@ -1,4 +1,4 @@
-    import models.Point;
+import models.Point;
     import models.Shape;
 
     import java.awt.*;
@@ -6,7 +6,7 @@
     import java.io.FileNotFoundException;
     import java.util.Scanner;
 
-    public class MyApplication {
+    public class Main {
         public static void main(String[] args) throws FileNotFoundException {
             File file = new File("src/source.txt");
 
@@ -22,7 +22,7 @@
             }
 
             System.out.println(shape.calculatePerimeter());
-            System.out.println(shape.getLongest());
+            System.out.println(shape.getLongestSide());
             System.out.println(shape.getAverageSide());
         }
-    }
+    
