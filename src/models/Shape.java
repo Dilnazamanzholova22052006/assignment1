@@ -11,34 +11,35 @@ public class Shape {
     public void addPoint(Point point){
         points.add(point);
     }
-    double calculatePerimeter() {
+    public double calculatePerimeter() {
         double perimeter = 0;
-        for (int i = 0; i < points.length; i++) {
-            Point current = points[i];
-            Point next = points[(i + 1)];
+        for (int i = 0; i < points.size(); i++) {
+            Point current = points.get(i);
+            Point next = points.get((i + 1) % points.size());
             perimeter += current.distance(next);
         }
-            return perimeter;
-        }
+        return perimeter;
     }
-    double getLongestSide() {
+
+    public double getLongestSide() {
         double longestSide = 0;
-        for (int i = 0; i < points.length; i++) {
-            Point current = points[i];
-            Point next = points[(i + 1)];
+        for (int i = 0; i < points.size(); i++) {
+            Point current = points.get(i);
+            Point next = points.get((i + 1) % points.size());
             double distance = current.distance(next);
             longestSide = Math.max(longestSide, distance);
         }
         return longestSide;
     }
-    double getAverageSide() {
-        double averageSide = 0;
-        for (int i = 0; i < points.length; i++) {
-            Point current = points[i];
-            Point next = points[i + 1];
+    public double getAverageSide() {
+        double perimeter = 0;
+        for (int i = 0; i < points.size(); i++) {
+            Point current = points.get(i);
+            Point next = points.get((i + 1) % points.size());
             perimeter += current.distance(next);
-            averageSide = perimeter / points.length;
         }
-        return averageSide;
+        return perimeter / points.size();
     }
-  
+}
+
+
