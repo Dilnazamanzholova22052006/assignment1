@@ -16,13 +16,13 @@ public class Point {
         return y;
     }
     public void setX(double xVar){
-        this.x=xVar;
+        x=xVar;
     }
     public void setY(double yVar){
-        this.y=yVar;
+        y=yVar;
     }
     @Override public String toString(){
-        return  x+ ":"+y;
+        return  x+ "!" +y;
     }
     // distance(Point dest) - distance from current point to the dest point
     public double distance(Point dest) {
